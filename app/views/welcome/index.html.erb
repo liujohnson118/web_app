@@ -1,0 +1,9 @@
+<h1>Welcome#index</h1>
+<p>Find me in app/views/welcome/index.html.erb</p>
+<% if current_user %>
+    <p> Signed in as <%= current_user.email %> </p>
+    <p><%= link_to "Sign Out With Okta", destroy_user_sso_session_path %></p>
+<% else %>
+    <p>Not signed in</p>
+    <p><%= link_to "Sign In With Okta", new_saml_user_session_path %></p>    
+<% end %>    
