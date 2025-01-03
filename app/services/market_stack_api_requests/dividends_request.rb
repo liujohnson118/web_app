@@ -22,8 +22,11 @@ module MarketStackApiRequests
     end
 
     def params
+      super.merge(dividend_params)
+    end
+
+    def dividend_params
       {
-        access_key: Secret.market_stack_api_key,
         symbols: symbols.join(","),
         limit: limit,
         offset: offset
