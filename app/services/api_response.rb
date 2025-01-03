@@ -8,7 +8,7 @@ class ApiResponse
   end
 
   def parsed_response
-    JSON.parse(response.response_body)
+    JSON.parse(response.response_body) || {}
   end
 
   def response_code

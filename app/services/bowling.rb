@@ -9,11 +9,21 @@ class Bowling
     new(...).call
   end
 
+  # Initializes a new instance of the Bowling class.
+  #
+  # @param scores [Array<String>] an array of integers representing the scores for each frame.
   def initialize(scores:)
     @scores = scores
     @total_score = 0
   end
 
+  # Calculates the total score for a bowling game.
+  #
+  # Iterates through the first 9 frames, calculating the score for each frame
+  # and adding it to the total score. Then, calculates the score for the final
+  # frame and adds it to the total score.
+  #
+  # @return [Integer] the total score for the bowling game
   def call
     scores[0..8].each_with_index do |frame, i|
       @total_score = @total_score + calculate_frame_score(frame, i)
